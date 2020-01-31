@@ -1,0 +1,1556 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" type="image/png" href="images/favicon-16.png">
+    <title>Gopax API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+      code.block { display: block; overflow: auto; white-space: pre; color:grey;background-color: grey;padding-left:10px;}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all_nosearch.js"></script>
+    
+  </head>
+
+  <body class="index" data-languages="[&quot;javascript&quot;,&quot;php&quot;,&quot;python&quot;]" onload="javascript:setLanguage();">
+    <a href="#" id="nav-button">
+      <span>
+        
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="javascript:goGopaxHome()"><img src="https://www.gopax.co.kr/logo.svg" class="logo" alt="Logo" /></a>
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="php">php</a>
+              <a href="#" data-language-name="python">python</a>
+        </div>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#guide" class="toc-h1 toc-link" data-title="Guide">Guide</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#api-endpoint-url" class="toc-h2 toc-link" data-title="API Endpoint (URL)">API Endpoint (URL)</a>
+                  </li>
+                  <li>
+                    <a href="#api-call-rate-limit" class="toc-h2 toc-link" data-title="API Call Rate Limit">API Call Rate Limit</a>
+                  </li>
+                  <li>
+                    <a href="#request-response-format" class="toc-h2 toc-link" data-title="Request/Response Format">Request/Response Format</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#private-api-authentication" class="toc-h1 toc-link" data-title="Private API Authentication">Private API Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#signature-formation-procedure" class="toc-h2 toc-link" data-title="SIGNATURE formation procedure">SIGNATURE formation procedure</a>
+                  </li>
+                  <li>
+                    <a href="#http-header-example" class="toc-h2 toc-link" data-title="HTTP header example">HTTP header example</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#authenticated-calls" class="toc-h1 toc-link" data-title="Authenticated Calls">Authenticated Calls</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-balances" class="toc-h2 toc-link" data-title="Get balances">Get balances</a>
+                  </li>
+                  <li>
+                    <a href="#get-balance-by-asset-name" class="toc-h2 toc-link" data-title="Get balance by asset name">Get balance by asset name</a>
+                  </li>
+                  <li>
+                    <a href="#get-orders" class="toc-h2 toc-link" data-title="Get orders">Get orders</a>
+                  </li>
+                  <li>
+                    <a href="#get-order-by-order-id" class="toc-h2 toc-link" data-title="Get order by order ID">Get order by order ID</a>
+                  </li>
+                  <li>
+                    <a href="#place-order" class="toc-h2 toc-link" data-title="Place order">Place order</a>
+                  </li>
+                  <li>
+                    <a href="#cancel-order-by-order-id" class="toc-h2 toc-link" data-title="Cancel order by order ID">Cancel order by order ID</a>
+                  </li>
+                  <li>
+                    <a href="#get-the-user-39-s-trade-history" class="toc-h2 toc-link" data-title="Get the user's trade history">Get the user's trade history</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#unauthenticated-calls" class="toc-h1 toc-link" data-title="Unauthenticated Calls">Unauthenticated Calls</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-assets" class="toc-h2 toc-link" data-title="Get assets">Get assets</a>
+                  </li>
+                  <li>
+                    <a href="#get-trading-pairs" class="toc-h2 toc-link" data-title="Get trading pairs">Get trading pairs</a>
+                  </li>
+                  <li>
+                    <a href="#get-ticker-by-trading-pair" class="toc-h2 toc-link" data-title="Get ticker by trading pair">Get ticker by trading pair</a>
+                  </li>
+                  <li>
+                    <a href="#get-order-book-by-trading-pair" class="toc-h2 toc-link" data-title="Get order book by trading pair">Get order book by trading pair</a>
+                  </li>
+                  <li>
+                    <a href="#get-recent-trades" class="toc-h2 toc-link" data-title="Get recent trades">Get recent trades</a>
+                  </li>
+                  <li>
+                    <a href="#get-24hr-stats-by-trading-pair" class="toc-h2 toc-link" data-title="Get 24hr stats by trading pair">Get 24hr stats by trading pair</a>
+                  </li>
+                  <li>
+                    <a href="#get-historic-rates-by-trading-pair" class="toc-h2 toc-link" data-title="Get historic rates by trading pair">Get historic rates by trading pair</a>
+                  </li>
+                  <li>
+                    <a href="#get-24hr-stats-for-all-trading-pairs" class="toc-h2 toc-link" data-title="Get 24hr stats for all trading pairs">Get 24hr stats for all trading pairs</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-status-response-code" class="toc-h2 toc-link" data-title="HTTP Status (Response code)">HTTP Status (Response code)</a>
+                  </li>
+                  <li>
+                    <a href="#gopax-error" class="toc-h2 toc-link" data-title="GOPAX Error">GOPAX Error</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='javascript:getApiKey()'>Issue API Key</a></li>
+            <li><a href='javascript:apiGitHome()'>Github</a></li>
+        </ul>
+
+        <ul class="toc-footer">
+            <li>API history</li>
+            <li><a href='javascript:goAPIhistory("")' >latest</a></li>
+            <li><a href='javascript:goAPIhistory(".v.0.1")' >V0.1</a></li>
+        </ul>
+
+        <div class="toc-exchange">              
+          <label for="exchange" id="exchange_title" style="line-height: 30px;">Exchange :: </label> 
+          <select id="exchange" onChange="javascript:changeExchange(this.value)" style="width:100px;">
+            <option value="ko">Korea</option>
+            <option value="en">Global</option>
+            <option value="id">Indonesia</option>
+          </select>
+        </div>
+
+        <div class="toc-lang">
+          <label for="languageCode" id="language_title" style="line-height: 30px;">Language :: </label> 
+          <select id="languageCode"  onChange="javascript:changeLanguage(this.value)" style="width:100px;">
+            <option value="ko">한국어</option>
+            <option value="en">English</option>
+            <option value="id">Indonesian</option>
+          </select>
+        </div>
+
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='guide'>Guide</h1>
+<p>Welcome to the GOPAX API!</p>
+
+<p>The following documents are shared to enable you to use some of the features of GOPAX through the REST API.</p>
+<h2 id='api-endpoint-url'>API Endpoint (URL)</h2>
+<p>GOPAX REST API provides endpoints for account/order management and public market data.</p>
+
+<p><code id="apiUrl" ></code></p>
+<h2 id='api-call-rate-limit'>API Call Rate Limit</h2>
+<p>When the API call rate limit is exceeded, the status code 429 - Too Many Requests will be returned.</p>
+
+<p>The rate is limited per IP for Public API and per API Key for Private API. At most 20 calls can be made within the 1 second moving window, respectively.</p>
+<h2 id='request-response-format'>Request/Response Format</h2>
+<p>The content-type for all requests and responses is application/json, and follows typical HTTP response status codes. For example, a successful request will return status code 200.</p>
+<h1 id='private-api-authentication'>Private API Authentication</h1>
+<p>In order to authenticate for the Private API, the following HTTP header must be included in the REST request.</p>
+
+<ol>
+<li>API-KEY: the issued API Key</li>
+<li>SIGNATURE: the message signature value (further description below)</li>
+<li>NONCE: a constantly increasing non-redundant value (typically, timestamp)</li>
+</ol>
+
+<aside class="success">
+You can issue two or more API keys.
+</aside>
+
+<aside class="warning">
+If identical NONCE values are used, the server will reject the request.
+</aside>
+
+<aside class="notice">
+The content-type of the HTTP body should be application/json.
+</aside>
+<h2 id='signature-formation-procedure'>SIGNATURE formation procedure</h2>
+<blockquote>
+<p>The below is example :</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">crypto</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'crypto'</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">generateSignature</span> <span class="o">=</span> <span class="p">(</span><span class="nx">secret</span><span class="p">,</span> <span class="nx">nonce</span><span class="p">,</span> <span class="nx">method</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">body</span> <span class="o">=</span> <span class="kc">null</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">requestPath</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">'?'</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+  <span class="kr">const</span> <span class="nx">_body</span> <span class="o">=</span> <span class="nx">body</span> <span class="p">?</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+
+  <span class="kr">const</span> <span class="nx">what</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">nonce</span><span class="p">}${</span><span class="nx">method</span><span class="p">}${</span><span class="nx">requestPath</span><span class="p">}${</span><span class="nx">_body</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+  <span class="kr">const</span> <span class="nx">key</span> <span class="o">=</span> <span class="nx">Buffer</span><span class="p">(</span><span class="nx">secret</span><span class="p">,</span> <span class="s1">'base64'</span><span class="p">);</span>
+  <span class="kr">const</span> <span class="nx">hmac</span> <span class="o">=</span> <span class="nx">crypto</span><span class="p">.</span><span class="nx">createHmac</span><span class="p">(</span><span class="s1">'sha512'</span><span class="p">,</span> <span class="nx">key</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">hmac</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">what</span><span class="p">).</span><span class="nx">digest</span><span class="p">(</span><span class="s1">'base64'</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?</span>
+<span class="k">function</span> <span class="nf">generateSignature</span><span class="p">(</span><span class="nv">$secret</span><span class="p">,</span> <span class="nv">$nonce</span><span class="p">,</span> <span class="nv">$method</span><span class="p">,</span> <span class="nv">$path</span><span class="p">,</span> <span class="nv">$body</span> <span class="o">=</span> <span class="kc">null</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="nv">$_body</span> <span class="o">=</span> <span class="nv">$body</span> <span class="o">?</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$body</span><span class="p">)</span> <span class="o">:</span> <span class="s1">''</span><span class="p">;</span>
+  <span class="nv">$tokenizedPath</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">'?'</span><span class="p">,</span> <span class="nv">$path</span><span class="p">);</span>
+  <span class="nv">$requestPath</span>   <span class="o">=</span> <span class="nv">$tokenizedPath</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+  <span class="nv">$what</span>          <span class="o">=</span> <span class="nv">$nonce</span> <span class="o">.</span> <span class="nv">$method</span> <span class="o">.</span> <span class="nv">$requestPath</span> <span class="o">.</span> <span class="nv">$_body</span><span class="p">;</span>
+  <span class="nv">$secret</span>        <span class="o">=</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$secret</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nb">base64_encode</span><span class="p">(</span><span class="nb">hash_hmac</span><span class="p">(</span><span class="s1">'sha512'</span><span class="p">,</span> <span class="nv">$what</span><span class="p">,</span> <span class="nv">$secret</span><span class="p">,</span> <span class="kc">true</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">time</span><span class="p">,</span> <span class="n">base64</span><span class="p">,</span> <span class="n">hmac</span><span class="p">,</span> <span class="n">hashlib</span>
+
+<span class="n">nonce</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+<span class="n">method</span> <span class="o">=</span> <span class="s">'GET'</span>
+<span class="n">request_path</span> <span class="o">=</span> <span class="s">'/balances'</span>
+
+<span class="n">what</span> <span class="o">=</span> <span class="n">nonce</span> <span class="o">+</span> <span class="n">method</span> <span class="o">+</span> <span class="n">request_path</span> <span class="c"># + request_body</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">secret</span><span class="p">)</span>
+<span class="n">signature</span> <span class="o">=</span> <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">what</span><span class="p">,</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha512</span><span class="p">)</span>
+<span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">signature</span><span class="o">.</span><span class="n">digest</span><span class="p">())</span>
+</code></pre>
+<ol>
+<li>Perform string-concatenation of the following in order.
+
+<ol>
+<li>NONCE of the header</li>
+<li>HTTP method (ALL CAPS): &#39;GET&#39;, &#39;POST&#39;, &#39;DELETE&#39; or such</li>
+<li>API endpoint URL (e.g. &#39;/orders&#39;, &#39;/trading-pairs/ETH-IDR/book&#39;)</li>
+<li>Request parameter body in JSON format (if not applicable, do not add any string)</li>
+</ol></li>
+<li>Decode the issued secret in base64.</li>
+<li>Use the value from 2. as the secret key and sign as sha512 HMAC.</li>
+<li>Encode the value from 3. in base64.</li>
+</ol>
+
+<aside class="warning">
+The Secret Key is generated when the API key is issued. If the Secret Key is lost, you must reissue the <a href="https://www.gopax.co.kr/account">API Key</a>.
+</aside>
+<h2 id='http-header-example'>HTTP header example</h2>
+<p><code class="block" >
+API-KEY: 128f0123-2a5d-48f5-8f19-e937f38f0a99
+SIGNATURE: gn2poOBVCAd5GLqXFAZGK9Pk4VD7+OaNtDIkFjejwIBjBm1X/DYPZVAP1rex6XqwH8vHt36ap26lTN85HVJz2g==
+NONCE: 1520994527165
+Content-Type: application/json
+</code></p>
+
+<aside class="warning">
+The above example cannot be used for testing. Create it through <a href="https://www.gopax.co.kr/account">personal API Key</a>
+</aside>
+<h1 id='authenticated-calls'>Authenticated Calls</h1><h2 id='get-balances'>Get balances</h2>
+<blockquote>
+<p>Response : </p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KRW"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"avail"</span><span class="p">:</span><span class="w"> </span><span class="mf">9101080.53</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hold"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pendingWithdrawal"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"avail"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hold"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pendingWithdrawal"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"avail"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.42317058</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hold"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pendingWithdrawal"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BCH"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"avail"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hold"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pendingWithdrawal"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP request</h3>
+<p><code>GET /balances</code></p>
+<h3 id='description-of-response'>Description of Response</h3>
+<p><code class="block" >
+{
+  &quot;asset&quot;: <i style="color: black;">[Asset Name]</i>,
+  &quot;avail&quot;: <i style="color: black;">[Avail]</i>,
+  &quot;hold&quot;: <i style="color: black;">[Hold]</i>,
+  &quot;pendingWithdrawal&quot;: <i style="color: black;">[Pending Withdrawal]</i>
+}
+</code></p>
+
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Asset Name</td>
+<td>Asset Name. You can view the entire list in the [Asset List Query]</td>
+</tr>
+<tr>
+<td>Avail</td>
+<td>Transactionable Amount (Quantity)</td>
+</tr>
+<tr>
+<td>Hold</td>
+<td>Outstanding Amount(Quantity)</td>
+</tr>
+<tr>
+<td>Pending Withdrawal</td>
+<td>Amount in Withdrawal(Quantity)</td>
+</tr>
+</tbody></table>
+<h2 id='get-balance-by-asset-name'>Get balance by asset name</h2>
+<blockquote>
+<p>Response : </p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KRW"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"avail"</span><span class="p">:</span><span class="w"> </span><span class="mf">9101080.53</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hold"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pendingWithdrawal"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-2'>HTTP request</h3>
+<p><code>GET /balances/&lt;Asset Name&gt;</code></p>
+<h3 id='url-parameter'>URL parameter</h3>
+<table><thead>
+<tr>
+<th>parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Asset Name</td>
+<td>Asset Name. You can view the entire list in the [Asset List Query]</td>
+</tr>
+</tbody></table>
+<h3 id='description-of-response-2'>Description of Response</h3>
+<p><code class="block" >
+{
+  &quot;asset&quot;: <i style="color: black;">[Asset Name]</i>,
+  &quot;avail&quot;: <i style="color: black;">[Avail]</i>,
+  &quot;hold&quot;: <i style="color: black;">[Hold]</i>,
+  &quot;pendingWithdrawal&quot;: <i style="color: black;">[Pending Withdrawal]</i>
+}
+</code></p>
+
+<table><thead>
+<tr>
+<th>값</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Asset Name</td>
+<td>Asset Name. You can view the entire list in the [Asset List Query]</td>
+</tr>
+<tr>
+<td>Avail</td>
+<td>Transactionable Amount (Quantity)</td>
+</tr>
+<tr>
+<td>Hold</td>
+<td>Outstanding Amount(Quantity)</td>
+</tr>
+<tr>
+<td>Pending Withdrawal</td>
+<td>Amount in Withdrawal(Quantity)</td>
+</tr>
+</tbody></table>
+<h2 id='get-orders'>Get orders</h2>
+<blockquote>
+<p>Response : </p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23712"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tradingPairName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CND-KRW"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-08T12:44:03.000Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23916"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tradingPairName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CND-KRW"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-09T10:43:10.000Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='http-request-3'>HTTP request</h3>
+<p><code>GET /orders</code></p>
+<h3 id='description-of-response-3'>Description of Response</h3>
+<p><code class="block">
+{
+  &quot;id&quot;: <i style="color: black;">[ID]</i>,
+  &quot;price&quot;: <i style="color: black;">[Price]</i>,
+  &quot;amount&quot;: <i style="color: black;">[Amount]</i>,
+  &quot;tradingPairName&quot;: <i style="color: black;">[Trading Pair]</i>,
+  &quot;side&quot;: <i style="color: black;">[Side]</i>,
+  &quot;type&quot;: <i style="color: black;">[Type]</i>,
+  &quot;createdAt&quot;: <i style="color: black;">[Created At]</i>
+}
+</code></p>
+
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>Unique No. of order</td>
+</tr>
+<tr>
+<td>Price</td>
+<td>Order price</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>Order amount</td>
+</tr>
+<tr>
+<td>Trading Pair</td>
+<td>Trading Pair. You can check the entire list in the [trading pair list] query.</td>
+</tr>
+<tr>
+<td>Side</td>
+<td>Trading Type (<code>buy</code>, <code>sell</code>)</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Order Type (<code>limit</code>)</td>
+</tr>
+<tr>
+<td>Created At</td>
+<td>Order Time</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+All API timestamps is returned in microseconds according to the ISO 8601 format.
+</aside>
+<h2 id='get-order-by-order-id'>Get order by order ID</h2>
+<blockquote>
+<p>Response : </p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23712"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"placed"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tradingPairName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CND-KRW"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-08T12:44:03.000Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-4'>HTTP request</h3>
+<p><code>GET /orders/&lt;Order Id&gt;</code></p>
+<h3 id='description-of-response-4'>Description of Response</h3>
+<p><code class="block">
+{
+  &quot;id&quot;: <i style="color: black;">[ID]</i>,
+  &quot;status&quot;: <i style="color: black;">[Status]</i>,
+  &quot;side&quot;: <i style="color: black;">[Side]</i>,
+  &quot;type&quot;: <i style="color: black;">[Type]</i>,
+  &quot;price&quot;: <i style="color: black;">[Price]</i>,
+  &quot;amount&quot;: <i style="color: black;">[Amount]</i>,
+  &quot;remaining&quot;: <i style="color: black;">[Remaining]</i>,
+  &quot;tradingPairName&quot;: <i style="color: black;">[Trading Pair]</i>,
+  &quot;createdAt&quot;: <i style="color: black;">[Created At]</i>
+}
+</code></p>
+
+<table><thead>
+<tr>
+<th>Value</th>
+<th>DEscription</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>Unique No. of order</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>상태 placed: 주문됨, cancelled: 취소됨, completed: 체결됨, updated: 부분 체결됨</td>
+</tr>
+<tr>
+<td>Side</td>
+<td>Trading Type (<code>buy</code> , <code>sell</code>)</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Order Type (<code>limit</code>)</td>
+</tr>
+<tr>
+<td>Price</td>
+<td>Order Price</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>Order Amount</td>
+</tr>
+<tr>
+<td>Trading Pair</td>
+<td>Trading Pair. You can check the entire list in the [trading pair list] query.</td>
+</tr>
+<tr>
+<td>Created At</td>
+<td>Order Time</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+All API timestamps is returned in microseconds according to the ISO 8601 format
+</aside>
+<h2 id='place-order'>Place order</h2>
+<blockquote>
+<p>Example of buying ETH-KRW by limit order</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tradingPairName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH-KRW"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-5'>HTTP request</h3>
+<p><code>POST /orders</code></p>
+<h3 id='description-of-request-body'>Description of request Body</h3>
+<p><code class="block" >
+{
+  &quot;type&quot;: <i style="color: black;">[Type]</i>,
+  &quot;side&quot;: <i style="color: black;">[Side]</i>,
+  &quot;price&quot;: <i style="color: black;">[Price]</i>,
+  &quot;amount&quot;: <i style="color: black;">[Amount]</i>,
+  &quot;tradingPairName&quot;: <i style="color: black;">[Trading Pair]</i>
+}
+</code></p>
+
+<table><thead>
+<tr>
+<th>값</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Type</td>
+<td>Order Type (<code>limit</code>)</td>
+</tr>
+<tr>
+<td>Side</td>
+<td>Trading Type (<code>buy</code>, <code>sell</code>)</td>
+</tr>
+<tr>
+<td>Price</td>
+<td>Order Price</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>Order Amount</td>
+</tr>
+<tr>
+<td>Trading Pair</td>
+<td>Trading Pair. You can check the entire list in the [trading pair list] query.</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">
+When ordered at market price, Amount is the total amount of assets to be purchased or sold (KRW for purchase in ETH-KRW and ETH for sale in ETH-KRW).
+</aside>
+<h3 id='description-of-response-5'>Description of Response</h3>
+<blockquote>
+<p>Response : </p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"98723"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">750000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tradingPairName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH-KRW"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-09T10:43:10.000Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code class="block" style="white-space: pre; ">
+{
+  &quot;id&quot;: <i style="color: black;">[ID]</i>,
+  &quot;price&quot;: <i style="color: black;">[Price]</i>,
+  &quot;amount&quot;: <i style="color: black;">[Amount]</i>,
+  &quot;tradingPairName&quot;: <i style="color: black;">[Trading Pair]</i>,
+  &quot;side&quot;: <i style="color: black;">[Side]</i>,
+  &quot;type&quot;: <i style="color: black;">[Type[]</i>,
+  &quot;createdAt&quot;: <i style="color: black;">[Created At]</i>
+}
+</code></p>
+
+<table><thead>
+<tr>
+<th>값</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>Unique No. of order</td>
+</tr>
+<tr>
+<td>Price</td>
+<td>Order Price</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>Order Amount</td>
+</tr>
+<tr>
+<td>Trading Pair</td>
+<td>Trading Pair. You can check the entire list in the [trading pair list] query.</td>
+</tr>
+<tr>
+<td>Side</td>
+<td>Trading Type (<code>buy</code>, <code>sell</code>)</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Order Type (<code>limit</code>)</td>
+</tr>
+<tr>
+<td>Created At</td>
+<td>Order Time</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+All API timestamps is returned in microseconds according to the ISO 8601 format.
+</aside>
+<h2 id='cancel-order-by-order-id'>Cancel order by order ID</h2>
+<blockquote>
+<p>Response : </p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-6'>HTTP request</h3>
+<p><code>DELETE /orders/&lt;Order Id&gt;</code></p>
+<h3 id='url-parameter-2'>URL parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Order Id</td>
+<td>Unique No. of order</td>
+</tr>
+</tbody></table>
+<h2 id='get-the-user-39-s-trade-history'>Get the user&#39;s trade history</h2>
+<blockquote>
+<p>Response : </p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">23152</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">23712</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"baseAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00968007</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quoteAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">99999.963135</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10330500</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-10T16:07:32.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tradingPairName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-KRW"</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">23302</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">23916</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"baseAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00149051</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quoteAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">15399.94932</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10332000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-10T16:03:54.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tradingPairName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-KRW"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='http-request-7'>HTTP request</h3>
+<p><code>GET /trades</code></p>
+<h3 id='query-string-parameter'>Query String Parameter</h3>
+<table><thead>
+<tr>
+<th>parameter</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>Option</td>
+<td>Number of items returned (up to 100)</td>
+</tr>
+<tr>
+<td>pastmax</td>
+<td>Option</td>
+<td>Load data older than this ID</td>
+</tr>
+<tr>
+<td>latestmin</td>
+<td>Option</td>
+<td>Load data newer than this ID</td>
+</tr>
+<tr>
+<td>after</td>
+<td>Option</td>
+<td>Load data after this timestamp (in ms)</td>
+</tr>
+<tr>
+<td>before</td>
+<td>Option</td>
+<td>Load data before this timestamp (in ms)</td>
+</tr>
+</tbody></table>
+<h3 id='description-of-response-6'>Description of Response</h3>
+<p><code class="block">
+{
+  &quot;id&quot;: <i style="color: black;">[ID]</i>,
+  &quot;orderId&quot;: <i style="color: black;">[Order ID]</i>,
+  &quot;baseAmount&quot;: <i style="color: black;">[Base Amount]</i>,
+  &quot;quoteAmount&quot;: <i style="color: black;">[Quote Amount]</i>,
+  &quot;fee&quot;: <i style="color: black;">[Fee]</i>,
+  &quot;price&quot;: <i style="color: black;">[Price]</i>,
+  &quot;timestamp&quot;: <i style="color: black;">[Timestamp]</i>,
+  &quot;side&quot;: <i style="color: black;">[Side]</i>,
+  &quot;tradingPairName&quot;: <i style="color: black;">[Trading Pair]</i>
+}
+</code></p>
+
+<table><thead>
+<tr>
+<th>값</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>Unique No. of trade</td>
+</tr>
+<tr>
+<td>Order ID</td>
+<td>Unique No. of order</td>
+</tr>
+<tr>
+<td>Base Amount</td>
+<td>Trading quantity (Include Fee on purchase)</td>
+</tr>
+<tr>
+<td>Quote Amount</td>
+<td>Trading quantity * Order Price (Include Fee on sale)</td>
+</tr>
+<tr>
+<td>Fee</td>
+<td>Trading fee</td>
+</tr>
+<tr>
+<td>Price</td>
+<td>Order Price</td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>Time to close a deal</td>
+</tr>
+<tr>
+<td>Side</td>
+<td>Trading Type (<code>buy</code>, <code>sell</code>)</td>
+</tr>
+<tr>
+<td>Trading Pair</td>
+<td>Trading Pair. You can check the entire list in the [trading pair list] query.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+All API timestamps is returned in microseconds according to the ISO 8601 format
+</aside>
+<h1 id='unauthenticated-calls'>Unauthenticated Calls</h1><h2 id='get-assets'>Get assets</h2>
+<blockquote>
+<p>Response :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KRW"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"대한민국 원"</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"이더리움"</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"비트코인"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>You can view a list of all assets handled by GOPAX.</p>
+<h3 id='http-request-8'>HTTP request</h3>
+<p><code>GET /assets</code></p>
+<h2 id='get-trading-pairs'>Get trading pairs</h2>
+<blockquote>
+<p>Response :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH-KRW"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"baseAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quoteAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KRW"</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-KRW"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"baseAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quoteAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KRW"</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BCH-KRW"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"baseAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BCH"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quoteAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KRW"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='http-request-9'>HTTP request</h3>
+<p><code>GET /trading-pairs</code></p>
+<h2 id='get-ticker-by-trading-pair'>Get ticker by trading pair</h2>
+<blockquote>
+<p>Response :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10194500</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ask"</span><span class="p">:</span><span class="w"> </span><span class="mi">10195000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"bid"</span><span class="p">:</span><span class="w"> </span><span class="mi">10184500</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">1752.05558316</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-14T03:50:41.184Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-10'>HTTP request</h3>
+<p><code>GET /trading-pairs/&lt;Trading Pair&gt;/ticker</code></p>
+<h3 id='url-parameter-3'>URL parameter</h3>
+<table><thead>
+<tr>
+<th>parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Trading Pair</td>
+<td>Trading Pair. You can check the entire list in the <a href="#get-trading-pairs">trading pair list</a> query.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+All API timestamps is returned in microseconds according to the ISO 8601 format
+</aside>
+<h2 id='get-order-book-by-trading-pair'>Get order book by trading pair</h2><h3 id='http-request-11'>HTTP request</h3>
+<p><code>GET /trading-pairs/&lt;Trading Pair&gt;/book</code></p>
+<h3 id='url-parameter-4'>URL parameter</h3>
+<table><thead>
+<tr>
+<th>parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Trading Pair</td>
+<td>Trading Pair. You can check the entire list in the <a href="#get-trading-pairs">trading pair list</a> query.</td>
+</tr>
+</tbody></table>
+<h3 id='query-string-parameter-2'>Query String Parameter</h3>
+<table><thead>
+<tr>
+<th>parameter</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>level</td>
+<td>Option</td>
+<td>호가창의 상세정보 수준<br><br>1 = 매수호가 및 매도호가<br>2 = 매수 및 매도 주문 각 50개<br>기타 = 호가창 전체</td>
+</tr>
+</tbody></table>
+<h2 id='get-recent-trades'>Get recent trades</h2><h3 id='http-request-12'>HTTP request</h3>
+<p><code>GET /trading-pairs/&lt;Trading Pair&gt;/trades</code></p>
+<h3 id='url-parameter-5'>URL parameter</h3>
+<table><thead>
+<tr>
+<th>parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Trading Pair</td>
+<td>Trading Pair. You can check the entire list in the <a href="#get-trading-pairs">trading pair list</a> query.</td>
+</tr>
+</tbody></table>
+<h3 id='query-string-parameter-3'>Query String Parameter</h3>
+<table><thead>
+<tr>
+<th>parameter</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>Option</td>
+<td>Number of items returned (up to 100)</td>
+</tr>
+<tr>
+<td>pastmax</td>
+<td>Option</td>
+<td>Load data older than this ID</td>
+</tr>
+<tr>
+<td>latestmin</td>
+<td>Option</td>
+<td>Load data newer than this ID</td>
+</tr>
+<tr>
+<td>after</td>
+<td>Option</td>
+<td>Load data after this timestamp (in ms)</td>
+</tr>
+<tr>
+<td>before</td>
+<td>Option</td>
+<td>Load data before this timestamp (in ms)</td>
+</tr>
+</tbody></table>
+<h3 id='description-of-response-7'>Description of Response</h3>
+<blockquote>
+<p>Response :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-14T04:01:17.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521000077</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6436174</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10163000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.38115097</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-14T04:01:17.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521000077</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6436173</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10164500</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.12818829</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-14T04:01:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521000071</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6436171</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10163000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.098</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='description-of-response-8'>Description of Response</h3>
+<p><code class="block">
+{
+  &quot;time&quot;: <i style="color: black;">[Time]</i>,
+  &quot;id&quot;: <i style="color: black;">[ID]</i>,
+  &quot;price&quot;: <i style="color: black;">[Price]</i>,
+  &quot;amount&quot;: <i style="color: black;">[Amount]</i>,
+  &quot;side&quot;: <i style="color: black;">[Side]</i>
+}
+</code></p>
+
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Time</td>
+<td>Trading Time</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>Unique No. of Trade</td>
+</tr>
+<tr>
+<td>Price</td>
+<td>Trading Price</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>Trading Amount</td>
+</tr>
+<tr>
+<td>Side</td>
+<td>Trading Type (<code>buy</code>, <code>sell</code>)</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+All API timestamps is returned in microseconds according to the ISO 8601 format
+</aside>
+<h2 id='get-24hr-stats-by-trading-pair'>Get 24hr stats by trading pair</h2>
+<blockquote>
+<p>Response :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="mi">10297000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="mi">10362500</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="mi">9901000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"close"</span><span class="p">:</span><span class="w"> </span><span class="mi">10089500</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">1700.84866009</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-14T05:02:37.337Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-13'>HTTP request</h3>
+<p><code>GET /trading-pairs/&lt;Trading Pair&gt;/stats</code></p>
+<h3 id='description-of-response-9'>Description of Response</h3>
+<p><code class="block">
+{
+  &quot;open&quot;: <i style="color: black;">[Open]</i>,
+  &quot;high&quot;: <i style="color: black;">[High]</i>,
+  &quot;low&quot;: <i style="color: black;">[Low]</i>,
+  &quot;close&quot;: <i style="color: black;">[Close]</i>,
+  &quot;volume&quot;: <i style="color: black;">[Volume]</i>,
+  &quot;time&quot;: <i style="color: black;">[Time]</i>
+}
+</code></p>
+
+<table><thead>
+<tr>
+<th>값</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Open</td>
+<td>Price 24hrs ago</td>
+</tr>
+<tr>
+<td>High</td>
+<td>24-hour peak price</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>24-hour low</td>
+</tr>
+<tr>
+<td>Close</td>
+<td>Current price (Renew every minute)</td>
+</tr>
+<tr>
+<td>Volume</td>
+<td>24-hour trading volume</td>
+</tr>
+<tr>
+<td>Time</td>
+<td>Latest data renewal time</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+All API timestamps is returned in microseconds according to the ISO 8601 format
+</aside>
+<h2 id='get-historic-rates-by-trading-pair'>Get historic rates by trading pair</h2>
+<blockquote>
+<p>Response :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">[</span><span class="w">
+    </span><span class="mi">1521004020000</span><span class="p">,</span><span class="w">
+    </span><span class="mi">10081000</span><span class="p">,</span><span class="w">
+    </span><span class="mi">10081000</span><span class="p">,</span><span class="w">
+    </span><span class="mi">10081000</span><span class="p">,</span><span class="w">
+    </span><span class="mi">10081000</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0398393</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="p">[</span><span class="w">
+    </span><span class="mi">1521004080000</span><span class="p">,</span><span class="w">
+    </span><span class="mi">10081000</span><span class="p">,</span><span class="w">
+    </span><span class="mi">10081000</span><span class="p">,</span><span class="w">
+    </span><span class="mi">10081000</span><span class="p">,</span><span class="w">
+    </span><span class="mi">10081000</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.01</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='http-request-14'>HTTP request</h3>
+<p><code>GET /trading-pairs/&lt;Trading Pair&gt;/candles?start=&lt;Start&gt;&amp;end=&lt;End&gt;&amp;interval=&lt;Interval&gt;</code></p>
+<h3 id='url-parameter-6'>URL parameter</h3>
+<table><thead>
+<tr>
+<th>parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Trading Pair</td>
+<td>Trading Pair. You can check the entire list in the <a href="#get-trading-pairs">trading pair list</a> query.</td>
+</tr>
+</tbody></table>
+<h3 id='query-string-parameter-4'>Query String Parameter</h3>
+<table><thead>
+<tr>
+<th>parameter</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Start</td>
+<td>Yes</td>
+<td>Start Timestamp (in ms)</td>
+</tr>
+<tr>
+<td>End</td>
+<td>Yes</td>
+<td>End Timestamp (in ms)</td>
+</tr>
+<tr>
+<td>Interval</td>
+<td>Yes</td>
+<td>Prefer Interval (in Minute, 1/5/30/1440)</td>
+</tr>
+</tbody></table>
+<h3 id='description-of-response-10'>Description of Response</h3>
+<p><code class="block">
+[
+  [
+    <i style="color: black;">[Time]</i>,
+    <i style="color: black;">[Low]</i>,
+    <i style="color: black;">[High]</i>,
+    <i style="color: black;">[Open]</i>,
+    <i style="color: black;">[Close]</i>,
+    <i style="color: black;">[Volume]</i>
+  ],
+  [
+    1521004080000,
+    10081000,
+    10081000,
+    10081000,
+    10081000,
+    0.01
+  ]
+]
+</code></p>
+
+<table><thead>
+<tr>
+<th>값</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Time</td>
+<td>Latest data renewal time</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>24-hour low</td>
+</tr>
+<tr>
+<td>High</td>
+<td>24-hour peak price</td>
+</tr>
+<tr>
+<td>Open</td>
+<td>Price 24hrs ago</td>
+</tr>
+<tr>
+<td>Close</td>
+<td>Current price (Renew every minute)</td>
+</tr>
+<tr>
+<td>Volume</td>
+<td>24-hour trading volume</td>
+</tr>
+</tbody></table>
+<h2 id='get-24hr-stats-for-all-trading-pairs'>Get 24hr stats for all trading pairs</h2>
+<blockquote>
+<p>Response :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH-KRW"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="mi">780000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="mi">784000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="mi">756000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"close"</span><span class="p">:</span><span class="w"> </span><span class="mi">763500</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">1602.93236136</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-14T05:13:08.364Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-KRW"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="mi">10308000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="mi">10362500</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="mi">9901000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"close"</span><span class="p">:</span><span class="w"> </span><span class="mi">10074000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">1687.88476801</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-14T05:12:08.245Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BCH-KRW"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="mi">1120000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"close"</span><span class="p">:</span><span class="w"> </span><span class="mi">1149500</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.12077207</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-14T04:40:06.535Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='http-request-15'>HTTP request</h3>
+<p><code>GET /trading-pairs/stats</code></p>
+<h3 id='description-of-response-11'>Description of Response</h3>
+<p><code class="block">
+  {
+  &quot;name&quot;: <i style="color: black;">[Trading Pair]</i>,
+  &quot;open&quot;: <i style="color: black;">[Open]</i>,
+  &quot;high&quot;: <i style="color: black;">[High]</i>,
+  &quot;low&quot;: <i style="color: black;">[Low]</i>,
+  &quot;close&quot;: <i style="color: black;">[Close]</i>,
+  &quot;volume&quot;: <i style="color: black;">[Volume]</i>,
+  &quot;time&quot;: <i style="color: black;">[Time]</i>
+}
+</code></p>
+
+<table><thead>
+<tr>
+<th>값</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Trading Pair</td>
+<td>Trading Pair. You can check the entire list in the [trading pair list] query.</td>
+</tr>
+<tr>
+<td>Open</td>
+<td>Price 24hrs ago</td>
+</tr>
+<tr>
+<td>High</td>
+<td>24-hour peak price</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>24-hour low</td>
+</tr>
+<tr>
+<td>Close</td>
+<td>Current price (Renew every minute)</td>
+</tr>
+<tr>
+<td>Volume</td>
+<td>24-hour trading volume</td>
+</tr>
+<tr>
+<td>Time</td>
+<td>Latest data renewal time</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Description of ResponseAll API timestamps is returned in microseconds according to the ISO 8601 format
+</aside>
+<h1 id='errors'>Errors</h1><h2 id='http-status-response-code'>HTTP Status (Response code)</h2>
+<table><thead>
+<tr>
+<th style="text-align: center">Error Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">400</td>
+<td>Bad request - Invalid request format</td>
+</tr>
+<tr>
+<td style="text-align: center">401</td>
+<td>Unauthorized - Invalid API Key</td>
+</tr>
+<tr>
+<td style="text-align: center">403</td>
+<td>Forbidden - No access to the requested resource</td>
+</tr>
+<tr>
+<td style="text-align: center">404</td>
+<td>Not found</td>
+</tr>
+<tr>
+<td style="text-align: center">429</td>
+<td>Too many requests - API call rate limit is exceeded</td>
+</tr>
+<tr>
+<td style="text-align: center">500</td>
+<td>Internal Server Error – Problem with the server</td>
+</tr>
+</tbody></table>
+<h2 id='gopax-error'>GOPAX Error</h2>
+<table><thead>
+<tr>
+<th style="text-align: center">Error Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">100, 106</td>
+<td>Invalid Asset Name. You can view the entire list in the [Asset List Query]</td>
+</tr>
+<tr>
+<td style="text-align: center">103</td>
+<td>Invalid Order Type</td>
+</tr>
+<tr>
+<td style="text-align: center">101, 104</td>
+<td>Invalid Trading Pair. You can check the entire list in the <a href="#get-trading-pairs">trading pair list</a> query.</td>
+</tr>
+<tr>
+<td style="text-align: center">105</td>
+<td>Inactived Trading Pair temporarily. You can check the entire list in the <a href="#get-trading-pairs">trading pair list</a> query.</td>
+</tr>
+<tr>
+<td style="text-align: center">107</td>
+<td>Invalid Order Amount</td>
+</tr>
+<tr>
+<td style="text-align: center">108</td>
+<td>Invalid Order Price</td>
+</tr>
+<tr>
+<td style="text-align: center">201</td>
+<td>Insufficient balance for the order</td>
+</tr>
+<tr>
+<td style="text-align: center">202</td>
+<td>Unmached unique No. of Order</td>
+</tr>
+<tr>
+<td style="text-align: center">203</td>
+<td>Too much value (Order Amount X Order Price)</td>
+</tr>
+<tr>
+<td style="text-align: center">204</td>
+<td>Buy order is currently unavailable. Please check the notice.</td>
+</tr>
+<tr>
+<td style="text-align: center">10155</td>
+<td>Invalid API Key</td>
+</tr>
+</tbody></table>
+
+<p>© Streami, Inc. All right reserved.</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="php">php</a>
+                <a href="#" data-language-name="python">python</a>
+            
+          </div>
+      </div>
+      
+    </div>
+    
+  </body>
+</html>
