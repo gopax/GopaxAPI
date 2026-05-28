@@ -1051,7 +1051,7 @@ Terdapat dua jenis order, limit dan market. Order hanya dapat dilakukan jika ter
 <td>Protection</td>
 <td>false</td>
 <td><code>no</code></td>
-<td>cancel order prices exceeding ±10% of initial matching price (<code>yes</code>, <code>no</code>)</td>
+<td>cancel order prices exceeding ±N% of initial matching price (<code>yes</code>, <code>no</code>)</td>
 </tr>
 <tr>
 <td>Client Order ID</td>
@@ -1112,7 +1112,7 @@ Terdapat dua jenis order, limit dan market. Order hanya dapat dilakukan jika ter
 </tr>
 <tr>
 <td>Protection</td>
-<td>cancel order prices exceeding ±10% of initial matching price (<code>yes</code>, <code>no</code>)</td>
+<td>cancel order prices exceeding ±N% of initial matching price (<code>yes</code>, <code>no</code>)</td>
 </tr>
 <tr>
 <td>Client Order ID</td>
@@ -1123,7 +1123,7 @@ Terdapat dua jenis order, limit dan market. Order hanya dapat dilakukan jika ter
 <td>Reason an order was forcibly completed. Possible values:
 <ul>
 <li><code>timeInForce</code>: completed due to a limit order type condition (PO/IOC/FOK).</li>
-<li><code>protection</code>: remaining amount was cancelled by the protection feature (price moved beyond ±10% of first matched price).</li>
+<li><code>protection</code>: remaining amount was cancelled by the protection feature (price moved beyond ±N% of first matched price).</li>
 <li><code>marketAlertPriceRestriction</code>: remaining amount was cancelled due to a <strong>market-alert price restriction</strong>. Some amount may already have been matched.</li>
 <li><code>marketAlertMarketOrderRestriction</code>: completed without any match due to a <strong>market-alert market-order restriction</strong>. In this case <code>remaining</code> equals <code>amount</code> and all <code>balanceChange</code> fields are 0.</li>
 </ul>
@@ -1152,7 +1152,7 @@ FOK(Fill-Or-Kill Order) matches a given order if and only if all of the order am
 </aside>
 
 <aside class="notice">
-Protection, if set to 'yes', will protect a given order by cancelling remaining amount if the price is over 10% of first matching price. Protection can be used for both limit and market order.
+Protection, if set to 'yes', will protect a given order by cancelling remaining amount if the price is over N% of first matching price. Protection can be used for both limit and market order.
 </aside>
 
 <aside class="notice">

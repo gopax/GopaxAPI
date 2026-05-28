@@ -1064,7 +1064,7 @@ Content-Type: application/json
 <td>Protection</td>
 <td>선택</td>
 <td><code>no</code></td>
-<td>최초 체결가 기준 ±10% 초과 되는 주문 취소 (<code>yes</code>, <code>no</code>)</td>
+<td>최초 체결가 기준 ±N% 초과 되는 주문 취소 (<code>yes</code>, <code>no</code>)</td>
 </tr>
 <tr>
 <td>Client Order ID</td>
@@ -1145,7 +1145,7 @@ Content-Type: application/json
 </tr>
 <tr>
 <td>Protection</td>
-<td>최초 체결가 기준 ±10% 초과 되는 주문 취소 (<code>yes</code>, <code>no</code>)</td>
+<td>최초 체결가 기준 ±N% 초과 되는 주문 취소 (<code>yes</code>, <code>no</code>)</td>
 </tr>
 <tr>
 <td>Client Order ID</td>
@@ -1156,7 +1156,7 @@ Content-Type: application/json
 <td>주문이 강제로 완료된 사유. 다음 값들이 올 수 있습니다.
 <ul>
 <li><code>timeInForce</code>: PO/IOC/FOK 등 지정가 주문 타입의 조건에 의해 강제 완료</li>
-<li><code>protection</code>: 주문 보호기능(±10% 초과)에 의해 잔량이 취소되어 완료</li>
+<li><code>protection</code>: 주문 보호기능(±N% 초과)에 의해 잔량이 취소되어 완료</li>
 <li><code>marketAlertPriceRestriction</code>: 시장경보로 인한 <strong>가격 제한</strong>에 걸려 잔량이 취소되며 완료. 일부 수량은 체결되어 있을 수 있습니다.</li>
 <li><code>marketAlertMarketOrderRestriction</code>: 시장경보로 인한 <strong>시장가 주문 제한</strong>에 걸려 체결 없이 완료. 이 경우 <code>remaining</code>이 <code>amount</code>와 동일하고 <code>balanceChange</code>의 모든 값이 0입니다.</li>
 </ul>
@@ -1185,7 +1185,7 @@ FOK(Fill-Or-Kill Order)는 호가의 접수시점에서 호가한 수량의 전�
 </aside>
 
 <aside class="notice">
-Protection은 주문시 해당 주문의 최초 체결가를 기준, 10%를 초과한 가격에 매도/매수 주문이 체결되는 것을 막는 주문 보호기능입니다. 가격이 10%를 초과하게 되면 해당주문의 잔량은 취소됩니다. 주문 보호기능은 지정가 및 시장가 주문에 적용 가능합니다.
+Protection은 주문시 해당 주문의 최초 체결가를 기준, N%를 초과한 가격에 매도/매수 주문이 체결되는 것을 막는 주문 보호기능입니다. 가격이 N%를 초과하게 되면 해당주문의 잔량은 취소됩니다. 주문 보호기능은 지정가 및 시장가 주문에 적용 가능합니다.
 </aside>
 
 <aside class="notice">
