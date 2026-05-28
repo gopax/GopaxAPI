@@ -1193,7 +1193,7 @@ forcedCompletionReason은 주문이 정상 체결이 아닌, 다른 사유에 �
 </aside>
 
 <aside class="warning">
-<code>status</code>가 <code>completed</code> 이더라도 <code>forcedCompletionReason</code> 값이 존재하면 위 사유로 잔량이 취소되며 종료된 주문입니다. 실제 체결 여부는 <code>remaining</code>과 <code>balanceChange</code> 값을 확인하세요. 특히 <code>marketAlertMarketOrderRestriction</code>인 경우 한 건도 체결되지 않은 상태입니다.
+<code>status</code>가 <code>completed</code> 이더라도 <code>forcedCompletionReason</code> 값이 존재한다면 전량 체결되어 완료된 주문이 아닙니다. 일부만 체결된 후 잔량이 취소되었을 수도 있고, 전혀 체결되지 않았을 수도 있습니다(<code>marketAlertMarketOrderRestriction</code>의 경우 체결이 전혀 발생하지 않습니다). 실제 체결량은 <code>remaining</code>과 <code>balanceChange</code> 값을 확인하세요.
 </aside>
 
 <aside class="warning">

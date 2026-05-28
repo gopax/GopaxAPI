@@ -1165,7 +1165,7 @@ Content-Type: application/json
 </tbody></table>
 
 <aside class="warning">
-<code>status</code>가 <code>completed</code> 이더라도 <code>forcedCompletionReason</code> 값이 존재하면 정상 체결이 아닌, 위 사유로 인해 잔량이 취소되며 종료된 주문입니다. 실제 체결 여부는 <code>remaining</code>과 <code>balanceChange</code> 값을 확인하세요.
+<code>status</code>가 <code>completed</code> 이더라도 <code>forcedCompletionReason</code> 값이 존재한다면 전량 체결되어 완료된 주문이 아닙니다. 일부만 체결된 후 잔량이 취소되었을 수도 있고, 전혀 체결되지 않았을 수도 있습니다(<code>marketAlertMarketOrderRestriction</code>의 경우 체결이 전혀 발생하지 않습니다). 실제 체결량은 <code>remaining</code>과 <code>balanceChange</code> 값을 확인하세요.
 </aside>
 
 <aside class="notice">

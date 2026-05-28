@@ -1187,7 +1187,7 @@ forcedCompletionReason is set when an order is forcibly completed for a non-trad
 </aside>
 
 <aside class="warning">
-Even if <code>status</code> is <code>completed</code>, a non-empty <code>forcedCompletionReason</code> means the order was terminated for the reason above with remaining amount cancelled — not a normal fill. Check <code>remaining</code> and <code>balanceChange</code> for actual execution. In particular, <code>marketAlertMarketOrderRestriction</code> means nothing was matched at all.
+Even if <code>status</code> is <code>completed</code>, a non-empty <code>forcedCompletionReason</code> does not mean the order was fully filled. The order may have been partially matched and then terminated with the remaining amount cancelled, or not matched at all (for <code>marketAlertMarketOrderRestriction</code>, no matching occurs). Always check <code>remaining</code> and <code>balanceChange</code> to determine the actual executed amount.
 </aside>
 
 <aside class="warning">
