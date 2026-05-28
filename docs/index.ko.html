@@ -1153,9 +1153,20 @@ Content-Type: application/json
 </tr>
 <tr>
 <td>Forced Completion Reason</td>
-<td>특정 시장가 주문 오더타입이나 주문 프로텍션 기능을 사용할 경우 주문이 완료된 사유</td>
+<td>주문이 강제로 완료된 사유. 다음 값들이 올 수 있습니다.
+<ul>
+<li><code>timeInForce</code>: PO/IOC/FOK 등 지정가 주문 타입의 조건에 의해 강제 완료</li>
+<li><code>protection</code>: 주문 보호기능(±10% 초과)에 의해 잔량이 취소되어 완료</li>
+<li><code>marketAlertPriceRestriction</code>: 시장경보로 인한 <strong>가격 제한</strong>에 걸려 잔량이 취소되며 완료. 일부 수량은 체결되어 있을 수 있습니다.</li>
+<li><code>marketAlertMarketOrderRestriction</code>: 시장경보로 인한 <strong>시장가 주문 제한</strong>에 걸려 체결 없이 완료. 이 경우 <code>remaining</code>이 <code>amount</code>와 동일하고 <code>balanceChange</code>의 모든 값이 0입니다.</li>
+</ul>
+</td>
 </tr>
 </tbody></table>
+
+<aside class="warning">
+<code>status</code>가 <code>completed</code> 이더라도 <code>forcedCompletionReason</code> 값이 존재하면 정상 체결이 아닌, 위 사유로 인해 잔량이 취소되며 종료된 주문입니다. 실제 체결 여부는 <code>remaining</code>과 <code>balanceChange</code> 값을 확인하세요.
+</aside>
 
 <aside class="notice">
 예약주문은 stopPrice를 양수로 표시함으로서 사용자가 예약한 가격에 현재가가 도달했을시 미리 지정한 형태의 주문을 등록하는 기능입니다. 매수주문을 예로들면 감시가격이 주문가격과 같거나 적으면 즉시 주문이 체결되나, 그렇지 않을시 해당 가격에 도달하였을때 GTC타입 지정가 혹은 시장가 주문이 등록되게 됩니다. 예약주문은 주로 이익의 실현이나 손실의 제한, 적정 가격 도달시 매수 등의 목적으로 사용됩니다.

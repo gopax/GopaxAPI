@@ -1147,7 +1147,14 @@ The above example cannot be used for testing. Create it through personal <a href
 </tr>
 <tr>
 <td>Forced Completion Reason</td>
-<td>Reason for completing an order with remainingAmount larger than zero</td>
+<td>Reason an order was forcibly completed. Possible values:
+<ul>
+<li><code>timeInForce</code>: completed due to a limit order type condition (PO/IOC/FOK).</li>
+<li><code>protection</code>: remaining amount was cancelled by the protection feature (price moved beyond ±10% of first matched price).</li>
+<li><code>marketAlertPriceRestriction</code>: remaining amount was cancelled due to a <strong>market-alert price restriction</strong>. Some amount may already have been matched.</li>
+<li><code>marketAlertMarketOrderRestriction</code>: completed without any match due to a <strong>market-alert market-order restriction</strong>. In this case <code>remaining</code> equals <code>amount</code> and all <code>balanceChange</code> fields are 0.</li>
+</ul>
+</td>
 </tr>
 </tbody></table>
 
@@ -1176,7 +1183,11 @@ Protection, if set to 'yes', will protect a given order by cancelling remaining 
 </aside>
 
 <aside class="notice">
-forcedCompletionReason is denoted when using order protection and/or a specific limit order type (PO, IOC, FOK) and order has completed with remainingAmount larger than zero. Two possible values are timeInForce and protection.
+forcedCompletionReason is set when an order is forcibly completed for a non-trade reason. Possible values are <code>timeInForce</code> (PO/IOC/FOK condition), <code>protection</code> (order protection feature), <code>marketAlertPriceRestriction</code> (market-alert price restriction), and <code>marketAlertMarketOrderRestriction</code> (market-alert market-order restriction).
+</aside>
+
+<aside class="warning">
+Even if <code>status</code> is <code>completed</code>, a non-empty <code>forcedCompletionReason</code> means the order was terminated for the reason above with remaining amount cancelled — not a normal fill. Check <code>remaining</code> and <code>balanceChange</code> for actual execution. In particular, <code>marketAlertMarketOrderRestriction</code> means nothing was matched at all.
 </aside>
 
 <aside class="warning">
