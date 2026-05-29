@@ -1183,7 +1183,11 @@ Protection, if set to 'yes', will protect a given order by cancelling remaining 
 </aside>
 
 <aside class="notice">
-forcedCompletionReason is set when an order is forcibly completed for a non-trade reason. Possible values are <code>timeInForce</code> (PO/IOC/FOK condition), <code>protection</code> (order protection feature), <code>marketAlertPriceRestriction</code> (market-alert price restriction), and <code>marketAlertMarketOrderRestriction</code> (market-alert market-order restriction).
+forcedCompletionReason indicates the reason an order was forcibly completed. It is set in the following two cases:
+<ol>
+<li>When using order protection and/or a specific limit order type (PO, IOC, FOK), it indicates which condition caused the order to complete. (<code>timeInForce</code>, <code>protection</code>)</li>
+<li>When the order is forcibly completed by a market-alert restriction, it indicates the alert reason. (<code>marketAlertPriceRestriction</code>, <code>marketAlertMarketOrderRestriction</code>)</li>
+</ol>
 </aside>
 
 <aside class="warning">

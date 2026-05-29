@@ -1189,7 +1189,11 @@ Protection은 주문시 해당 주문의 최초 체결가를 기준, N%를 초�
 </aside>
 
 <aside class="notice">
-forcedCompletionReason은 주문이 정상 체결이 아닌, 다른 사유에 의해 강제로 완료되었음을 표기해주는 값입니다. <code>timeInForce</code>(PO/IOC/FOK 조건), <code>protection</code>(주문 보호기능), <code>marketAlertPriceRestriction</code>(시장경보 가격 제한), <code>marketAlertMarketOrderRestriction</code>(시장경보 시장가 주문 제한) 값이 올 수 있습니다.
+forcedCompletionReason은 주문이 강제 완료된 사유를 표기해주는 값으로, 다음 두 가지 경우에 설정됩니다.
+<ol>
+<li>주문 보호기능과 PO, IOC, FOK 지정가 주문타입을 사용한 경우 어떤 사유로 주문이 체결완료되었는지를 표기합니다. (<code>timeInForce</code>, <code>protection</code>)</li>
+<li>시장 경보제로 인해 주문이 강제 완료된 경우 해당 사유를 표기합니다. (<code>marketAlertPriceRestriction</code>, <code>marketAlertMarketOrderRestriction</code>)</li>
+</ol>
 </aside>
 
 <aside class="warning">
