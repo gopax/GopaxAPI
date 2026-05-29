@@ -1153,9 +1153,9 @@ Content-Type: application/json
 </tr>
 <tr>
 <td>Forced Completion Reason</td>
-<td>주문이 강제로 완료된 사유. 다음 값들이 올 수 있습니다.
+<td>주문이 완료된 사유. 다음 값들이 올 수 있습니다.
 <ul>
-<li><code>timeInForce</code>: PO/IOC/FOK 등 지정가 주문 타입의 조건에 의해 강제 완료</li>
+<li><code>timeInForce</code>: PO/IOC/FOK 등 지정가 주문 타입의 조건에 따라 잔량이 취소되며 완료</li>
 <li><code>protection</code>: 주문 보호기능(±N% 초과)에 의해 잔량이 취소되어 완료</li>
 <li><code>marketAlertPriceRestriction</code>: 시장경보로 인한 <strong>가격 제한</strong>에 걸려 잔량이 취소되며 완료. 일부 수량은 체결되어 있을 수 있습니다.</li>
 <li><code>marketAlertMarketOrderRestriction</code>: 시장경보로 인한 <strong>시장가 주문 제한</strong>에 걸려 체결 없이 완료. 이 경우 <code>remaining</code>이 <code>amount</code>와 동일하고 <code>balanceChange</code>의 모든 값이 0입니다.</li>
@@ -1190,10 +1190,10 @@ Protection은 주문시 해당 주문의 최초 체결가를 기준, N%를 초�
 </aside>
 
 <aside class="notice">
-forcedCompletionReason은 주문이 강제 완료된 사유를 표기해주는 값으로, 다음 두 가지 경우에 설정됩니다.
+forcedCompletionReason은 주문이 어떤 사유로 완료되었는지를 표기해주는 값으로, 다음 두 가지 경우에 설정됩니다.
 <ol>
 <li>주문 보호기능과 PO, IOC, FOK 지정가 주문타입을 사용한 경우 어떤 사유로 주문이 체결완료되었는지를 표기합니다. (<code>timeInForce</code>, <code>protection</code>)</li>
-<li>시장 경보제로 인해 주문이 강제 완료된 경우 해당 사유를 표기합니다. (<code>marketAlertPriceRestriction</code>, <code>marketAlertMarketOrderRestriction</code>)</li>
+<li>시장 경보제로 인해 주문이 완료된 경우 해당 사유를 표기합니다. (<code>marketAlertPriceRestriction</code>, <code>marketAlertMarketOrderRestriction</code>)</li>
 </ol>
 </aside>
 
